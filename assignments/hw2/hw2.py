@@ -1,36 +1,60 @@
 """
-Name: <your name goes here – first and last>
-<ProgramName>.py
+Name: Richard Easley
+hw2.py
 
-Problem: <Brief, one or two sentence description of the problem that this program solves, in your own words.>
+Problem: Develop simple Python programs that do input, produce output and do arithmetic.
 
 Certification of Authenticity:
-<include one of the following>
 I certify that this assignment is entirely my own work.
-I certify that this assignment is my own work, but I discussed it with: <Name(s)>
 """
 import math
 
 
 def sum_of_threes():
-    pass
+    upper = eval(input("what is the upper bound? "))
+    acc = 0
+    for i in range(0, upper+1, 3):
+        acc = acc + i
+    print("sum of threes is", acc)
 
 
 def multiplication_table():
-    pass
+    for i in range(1, 11):
+        for j in range(1, 11):
+            print(i*j, end=" ")
+        print()
 
 
 def triangle_area():
-    pass
+    alpha = eval(input("Enter side a length: "))
+    bravo = eval(input("Enter side b length: "))
+    charlie = eval(input("Enter side c length: "))
+    side = (alpha + bravo + charlie) / 2
+    area = math.sqrt(side*(side-alpha)*(side-bravo)*(side-charlie))
+    print("area is", area)
 
 
 def sum_squares():
-    pass
+    lower = eval(input("Enter lower range: "))
+    upper = eval(input("Enter upper range: "))
+    acc = 0
+    for i in range(lower, upper + 1):
+        acc = acc + (i**2)
+    print(acc)
 
 
 def power():
-    pass
+    base = eval(input("Enter base: "))
+    expo = eval(input("Enter exponent: "))
+    acc = 1
+    for _ in range(expo):
+        acc = acc * base
+    print(base, "^", expo, "=", acc)
 
 
 if __name__ == '__main__':
-    pass
+    sum_of_threes()
+    multiplication_table()
+    triangle_area()
+    sum_squares()
+    power()

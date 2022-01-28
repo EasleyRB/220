@@ -39,7 +39,7 @@ def sum_squares():
     upper = eval(input("Enter upper range: "))
     acc = 0
     for i in range(lower, upper + 1):
-        acc = acc + (i**2)
+        acc = acc + (i*i)
     print(acc)
 
 

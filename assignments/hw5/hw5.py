@@ -1,42 +1,80 @@
 """
-Name: <your name goes here – first and last>
-<ProgramName>.py
+Name: Richard Easley
+hw5.py
 
-Problem: <Brief, one or two sentence description of the problem that this program solves, in your own words.>
+Problem: Use Python strings and lists.
+         Use Python indexing and slicing facilities
 
 Certification of Authenticity:
-<include one of the following>
 I certify that this assignment is entirely my own work.
-I certify that this assignment is my own work, but I discussed it with: <Name(s)>
 """
 
 
 def name_reverse():
-    pass
+    # Read a name in first then last order and display in last
+    # then first separated by a comma.
+    name = input("enter a name (first last): ")
+    name = name.split(" ")
+    first = name[0]
+    last = name[1]
+    print(last + ", " + first)
 
 
 def company_name():
-    pass
+    # Input three-part domain name and print only company name
+    dom = input("enter a domain: ")
+    dom = dom.split(".")
+    company = dom[1]
+    print(company)
 
 
 def initials():
-    pass
+    stu = eval(input("how many students are in the class? "))
+    for i in range(stu):
+        name = input("what is the name of student " + str(i+1) + "? ")
+        name = name.split(" ")
+        first = name[0]
+        last = name[1]
+        print(first[0] + last[0])
 
 
 def names():
-    pass
+    namelist = input("enter a list of names: ")
+    namelist = namelist.split(", ")
+    for i in namelist:
+        name = i.split(" ")
+        init = name[0][0] + name[1][0]
+        print(init, end=" ")
 
 
 def thirds():
-    pass
+    num = eval(input("enter the number of sentences: "))
+    letters = ""
+    for i in range(num):
+        sent = input("enter sentence " + str(i+1) + ": ")
+        letters = letters + sent[0::3]
+    print(letters)
 
 
 def word_average():
-    pass
+    sent = input("enter a sentence: ")
+    words = sent.split(" ")
+    acc = 0
+    for i in words:
+        acc = acc + len(i)
+    print(acc / len(words))
 
 
 def pig_latin():
-    pass
+    sent = input("enter a sentence to convert to pig latin: ")
+    sent = sent.lower()
+    words = sent.split(" ")
+    pig = ""
+    for i in words:
+        latin = i[1:] + i[0] + "ay"
+        pig = pig + latin + " "
+    pig = pig.rstrip()
+    print(pig)
 
 
 if __name__ == '__main__':
@@ -46,5 +84,4 @@ if __name__ == '__main__':
     # names()
     # thirds()
     # word_average()
-    # pig_latin()
-    pass
+    pig_latin()
